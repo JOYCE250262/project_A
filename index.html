@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scientific Museum</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: unset;
+        }
+
+        body {
+            margin: unset;
+        }
+
+        header {
+            background-color: rgba(40, 167, 185, 0.9);
+            height: 18vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0% 0%;
+        }
+
+        .mr-2 {
+            margin-right: 2%;
+        }
+
+        .mr-4 {
+            padding-right: 9%;
+        }
+
+        .mr-10 {
+            padding-right: 10%;
+        }
+
+        .title_searchbar,
+        .cart_user_account {
+            margin-left: 10%;
+        }
+
+        .title_searchbar ul {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-left: 10%;
+            list-style-type: none;
+            white-space: nowrap;
+        }
+
+        .title_searchbar form {
+            position: relative;
+            margin-left: 40%;
+            align-items: center;
+            display: flex;
+        }
+
+        .title_searchbar input[type="text"] {
+            border-radius: 5px;
+            width: 18em;
+        }
+
+        .title_searchbar input::placeholder {
+            color: #000000;
+        }
+
+        .title_searchbar input[placeholder="Search"] {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 2%;
+            border: unset;
+        }
+
+        .title_searchbar button {
+            position: absolute;
+            right: 0%;
+            font-size: 2rem;
+            color: #818181;
+            background: unset;
+            border: unset;
+        }
+
+        .fa-flip-horizontal {
+            padding: 0.4rem;
+            margin-left: 20%;
+            font-size: 2em;
+        }
+
+        .cart_user_account {
+            margin-right: 10%;
+        }
+
+        .fa-user-plus {
+            padding: 2%;
+            font-size: 3rem;
+            margin-left: 10%;
+        }
+
+        .cart_user_account ul {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-left: -15%;
+            list-style-type: none;
+        }
+
+        .remove_link_decoration {
+            text-decoration: none;
+        }
+
+        .main_menu {
+            width: 100%;
+            height: 35%;
+            display: flex;
+            padding: 1%;
+        }
+
+        .main_menu ul {
+            display: flex;
+            list-style-type: none;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+            justify-content: center;
+        }
+
+        .main_menu a {
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2em;
+            margin-right: 1.5em;
+        }
+
+        .footer_area {
+            background-color: rgba(40, 167, 185, 0.9);
+            line-height: 1.5;
+            position: relative;
+            margin-top: 0%;
+        }
+
+        .follow-paywith-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2em;
+        }
+
+        .social_handles {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 10%;
+        }
+
+        .social_handles p {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #000000;
+            list-style-type: none;
+            white-space: nowrap;
+        }
+
+        .social_icons ul {
+            display: flex;
+            list-style-type: none;
+            width: 100%;
+            padding: 0%;
+            justify-content: center;
+            font-size: 2rem;
+            margin: unset;
+        }
+
+        .social_icons a {
+            margin-right: 1rem;
+        }
+
+        .social_icons .fa-square-facebook {
+            color: #3b5998;
+            border: unset;
+            border-radius: 20%;
+            padding: 2px;
+        }
+
+        .social_icons .fa-square-instagram {
+            background: linear-gradient(to bottom right, #f95959, #ce3778, #9c218c, #663399, #2f2c5f);
+            border-radius: 20%;
+            border: unset;
+            padding: 3px;
+        }
+
+        .social_icons .fa-tiktok {
+            border: unset;
+            border-radius: 20%;
+            padding: 2px;
+        }
+
+        .social_icons .fa-twitter {
+            color: #1DA1F2;
+            border: unset;
+            border-radius: 20%;
+            padding: 2px;
+        }
+
+        .payments_modes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 10%;
+        }
+
+        .payments_modes p {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #000000;
+            list-style-type: none;
+            white-space: nowrap;
+        }
+
+        .payment_icons img {
+            margin-left: 47%;
+        }
+
+        .blackseparator2 {
+            width: 100%;
+            background-color: #000000;
+            padding-top: 0.5%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .copyright_info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .site_title_footer {
+            margin-left: 10%;
+        }
+
+        .site_title_footer ul {
+            font-family: Inter, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            list-style-type: none;
+            padding: 0%;
+        }
+
+        .copyright_info p {
+            font-family: Inter, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-right: 10%;
+        }
+
+        .center-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bgcolor-white {
+            background-color: #ffffff;
+        }
+
+        .color-white1 {
+            color: #ffffff;
+        }
+
+        .color-black {
+            color: #000000;
+        }
+
+        .bgcolor-black {
+            background-color: #000000;
+        }
+
+        .article_style1 {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .flex_box_column1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .span-grow {
+            flex-grow: 1;
+        }
+
+        .hamburger_container,
+        .mobile-header {
+            display: none;
+        }
+
+        /* Home Page Styles */
+        .homeimage-top-container {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .homeimage-top-container img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .home_article1_container {
+            background-color: unset;
+            padding: 20px;
+            width: 49%;
+            margin: auto;
+        }
+
+        .home_article1_container ul {
+            list-style-type: none;
+        }
+
+        .homeimages-middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            padding-left: 20%;
+            padding-right: 20%;
+            gap: 5%;
+        }
+
+        .homeimages-middle img {
+            object-fit: cover;
+            width: 50%;
+        }
+
+        .home_article2_container {
+            width: 50%;
+        }
+
+        .home_article2_container h2 {
+            text-align: center;
+        }
+
+        .home_article2_container p {
+            top: 190%;
+            list-style-type: none;
+        }
+
+        .home_article2_container h2 {
+            top: 6%;
+            left: 30%;
+            list-style-type: none;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 2.0rem;
+        }
+
+        .submenu_grid_container {
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 50%;
+            padding: 0%;
+        }
+
+        .grid_submenu {
+            border: unset;
+            padding: 9%;
+            text-align: center;
+        }
+
+        .grid_submenu .home_button,
+        .Events_button_button,
+        .Museum_button,
+        .Exhibition_button,
+        .Explore_button,
+        .Visit_Us_button {
+            border-radius: 73%;
+            padding: 3%;
+            width: 20vw;
+            border: unset;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .grid_submenu .home_button {
+            background: #28B92EED;
+        }
+
+        .grid_submenu .Events_button_button {
+            background: #28A7B9E5;
+        }
+
+        .grid_submenu .Museum_button {
+            background: #AD28B9E5;
+        }
+
+        .grid_submenu .Exhibition_button {
+            background: #3428B9E5;
+        }
+
+        .grid_submenu .Explore_button {
+            background: #28B92EED;
+        }
+
+        .grid_submenu .Visit_Us_button {
+            background: #28A7B9E5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title_searchbar center-items">
+            <ul>
+                <li>Community</li>
+                <li>Science museum</li>
+            </ul>
+            <form>
+                <input type="text" placeholder="Search" id="search" name="search">
+                <button type="submit" class="search_btn">
+                    <i class="fas fa-light fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="center-items mr-10">
+            <a href="#"><i class="fa-solid fa-cart-shopping fa-flip-horizontal bgcolor-white"></i></a>
+            <div class="cart_user_account center-items">
+                <i class="fa-solid fa-user-plus"></i>
+                <ul>
+                    <li><a href="#" class="remove_link_decoration">Login</a></li>
+                    <li><a href="#" class="remove_link_decoration">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV for Default Screen -->
+    <nav class="main_menu color-white1 bgcolor-black">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">MUSEUM PROGRAMS</a></li>
+            <li><a href="#">EXPLORE</a></li>
+            <li><a href="#">EVENTS</a></li>
+            <li><a href="#">EXHIBITIONS</a></li>
+            <li><a href="#">VISIT US</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <div class="title_searchbar center-items">
+            <ul>
+                <li>Community</li>
+                <li>Science museum</li>
+            </ul>
+        </div>
+        <div class="center-items mr-2">
+            <a class="mr-4" href="#"><i class="fa-solid fa-cart-shopping fa-flip-horizontal bgcolor-white"></i></a>
+            <div class="cart_user_account center-items">
+                <i class="fa-solid fa-user-plus"></i>
+                <ul>
+                    <li><a href="#" class="remove_link_decoration">Login</a></li>
+                    <li><a href="#" class="remove_link_decoration">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV for Hamburger Response -->
+    <div class="hamburger_container">
+        <input id="menu-box" type="checkbox">
+        <label for="menu-box">
+            <div class="hamburger_icon"><i class="fa fa-bars"></i></div>
+        </label>
+        <form>
+            <input type="text" placeholder="Search" id="Search" name="Search">
+            <button type="submit" class="search_btn"><i class="fas fa-light fa-magnifying-glass"></i></button>
+        </form>
+        <label class="menu-overlay hamburger_menu" for="menu-box"></label>
+        <nav class="hamburger_menu color-white1 bgcolor-black">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MUSEUM PROGRAMS</a></li>
+                <li><a href="#">EXPLORE</a></li>
+                <li><a href="#">EVENTS</a></li>
+                <li><a href="#">EXHIBITIONS</a></li>
+                <li><a href="#">VISIT US</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- MAIN PAGE CONTENT-->
+    <div class="homeimage-top-container">
+            <img src="images/homeimagetop.jpg" alt="kids_in_lab_image">
+    </div>
+
+    <div class="home_article1_container">
+        <ul class="article_style1">
+            <li>Over the course of human history, science has developed from our</li>
+            <li>early understanding of fire, wind, water and earth to exploring every</li>
+            <li>thing from galaxies far away to the very building blocks of life itself.</li>
+        </ul>
+    </div>
+
+    <div class="homeimages-middle">
+      <img src="images/kid-touches-robot.jpg" alt="kid-touches-robot-image">
+        <div class="home_article2_container">
+            <h2>Cosmology</h2>
+            <p class="article_style1">
+                Explore the wonders of our cosmos. Our fantastic exhibition, 'The Sky Above Us', explores the night sky
+                and what we can
+                see and know about the universe around us. We'll locate the various constellations and galaxies that
+                can be seen and
+                learn a bit about the early navigators who used the stars to travel by
+            </p>
+        </div>
+    </div>
+
+    <div class="submenu_container center-items">
+        <div class="submenu_grid_container">
+            <div class="grid_submenu"><button class="home_button color-white1"><a class="remove_link_decoration"
+                        href="#">Home</a></button></div>
+            <div class="grid_submenu"><button class="Events_button_button color-white1"><a
+                        class="remove_link_decoration" href="#">Events</a></button></div>
+            <div class="grid_submenu"><button class="Museum_button color-white1"><a class="remove_link_decoration"
+                        href="#">Programs</a></button></div>
+            <div class="grid_submenu"><button class="Exhibition_button color-white1"><a class="remove_link_decoration"
+                        href="#">Exhibitions</a></button></div>
+            <div class="grid_submenu"><button class="Explore_button color-white1"><a class="remove_link_decoration"
+                        href="#">Explore</a></button></div>
+            <div class="grid_submenu"><button class="Visit_Us_button color-white1"><a class="remove_link_decoration"
+                        href="#">Visit Us</a></button></div>
+        </div>
+    </div>
+
+    <footer class="footer_area">
+        <div class="follow-paywith-container">
+            <div class="social_handles">
+                <p>Follow us</p>
+                <div class="social_icons">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook bgcolor-white"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-instagram color-white1"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-tiktok color-white1 bgcolor-black"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter bgcolor-white"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="payments_modes">
+                <p>Pay With</p>
+                <div class="payment_icons">
+                    <a href="#">
+                      <img src="images/visa.svg" alt="Visa">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="blackseparator2"></div>
+        <div class="copyright_info color-white1">
+            <div class="site_title_footer">
+                <ul>
+                    <li>Community</li>
+                    <li>Science museum</li>
+                </ul>
+            </div>
+            <p> Tel. +256757886712 </p>
+        </div>
+    </footer>
+</body>
+
+</html>
